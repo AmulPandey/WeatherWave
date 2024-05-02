@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkgmain"
+    tools:context=".MainActivity">
+
+
+       <SearchView
+           android:id="@+id/searchView"
+           style="@style/CustomSearchViewStyle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:searchIcon="@drawable/baseline_location_on_24"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.498"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.064" />
+
+       <TextView
+           android:id="@+id/city"
+           android:layout_width="wrap_content"
+           android:layout_height="55dp"
+           android:gravity="center"
+           android:text="City"
+           android:textColor="@color/white"
+           android:textSize="25sp"
+           android:textStyle="bold"
+           app:layout_constraintBottom_toBottomOf="@+id/lottieAnimationView"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.501"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.309" />
+
+       <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginBottom="152dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/def"
+        tools:ignore="MissingConstraints">
+
+    </com.airbnb.lottie.LottieAnimationView>
+
+    <TextView
+        android:id="@+id/avgtemp"
+        android:layout_width="306dp"
+        android:layout_height="111dp"
+        android:fontFamily="@font/berkshireswash"
+        android:gravity="center_horizontal"
+        android:text="00°c"
+        android:textColor="@color/white"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/weather"
+        android:layout_width="177dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/backgroungshape"
+        android:gravity="center"
+        android:text="weather"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/avgtemp"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avgtemp"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <TextView
+        android:id="@+id/min"
+        android:layout_width="76dp"
+        android:layout_height="75dp"
+        android:background="@drawable/backgroungshape"
+        android:gravity="center"
+        android:text="00°"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avgtemp"
+        app:layout_constraintVertical_bias="0.069" />
+
+    <TextView
+        android:id="@+id/max"
+        android:layout_width="76dp"
+        android:layout_height="75dp"
+        android:background="@drawable/backgroungshape"
+        android:gravity="center"
+        android:text="00°"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avgtemp"
+        app:layout_constraintVertical_bias="0.069" />
+
+       <FrameLayout
+           android:id="@+id/frame"
+           android:layout_width="350dp"
+           android:layout_height="120dp"
+           android:layout_marginTop="570dp"
+           android:orientation="horizontal"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <LinearLayout
+               android:layout_width="344dp"
+               android:layout_height="match_parent"
+               android:background="@drawable/backgroungshape"
+               android:gravity="center_horizontal"
+               android:orientation="horizontal"
+               android:padding="10dp">
+
+               <LinearLayout
+
+                   android:layout_width="100dp"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:orientation="vertical">
+
+                   <ImageView
+                       android:id="@+id/wind"
+                       android:layout_width="45dp"
+                       android:layout_height="45sp"
+                       android:layout_gravity="center_horizontal"
+                       android:src="@drawable/wind" />
+
+                   <TextView
+                       android:id="@+id/wind1"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:gravity="center"
+                       android:text="00 m/s"
+                       android:textColor="@color/white"
+                       android:textStyle="bold" />
+
+                   <TextView
+                       android:id="@+id/wind2"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:gravity="center"
+                       android:text="wind"
+                       android:textColor="@color/white"
+                       android:textStyle="bold"
+
+                       />
+
+               </LinearLayout>
+
+               <LinearLayout
+
+                   android:layout_width="100dp"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+
+                   <ImageView
+                       android:id="@+id/cloud"
+                       android:layout_width="45dp"
+                       android:layout_height="45dp"
+                       android:layout_gravity="center_horizontal"
+                       android:src="@drawable/clouds" />
+
+                   <TextView
+                       android:id="@+id/cloud1"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:gravity="center"
+                       android:text="00"
+                       android:textColor="@color/white"
+                       android:textStyle="bold"
+
+                       />
+
+                   <TextView
+                       android:id="@+id/cloud2"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:gravity="center"
+                       android:text="clouds"
+                       android:textColor="@color/white"
+                       android:textStyle="bold"
+
+                       />
+
+               </LinearLayout>
+
+               <LinearLayout
+
+                   android:layout_width="100dp"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+
+                   <ImageView
+                       android:id="@+id/humidity"
+                       android:layout_width="45dp"
+                       android:layout_height="45dp"
+                       android:layout_gravity="center_horizontal"
+                       android:src="@drawable/humidity" />
+
+                   <TextView
+                       android:id="@+id/humidity1"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:gravity="center"
+                       android:text="00 %"
+                       android:textColor="@color/white"
+                       android:textStyle="bold"
+
+                       />
+
+                   <TextView
+                       android:id="@+id/humidity2"
+                       android:layout_width="match_parent"
+                       android:layout_height="25dp"
+                       android:gravity="center"
+                       android:text="humidity"
+                       android:textColor="@color/white"
+                       android:textStyle="bold"
+
+                       />
+
+               </LinearLayout>
+
+           </LinearLayout>
+       </FrameLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
