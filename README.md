@@ -22,7 +22,7 @@ A user-friendly Android application designed to provide real-time weather inform
 
 ## **Screenshots**
 <p align="center">
-<img alt="mvvm-architecture"  src="https://github.com/AmulPandey/WeatherWave/blob/main/app/src/main/assets/WeatherScreenshots.jpg">
+<img alt="Overview"  src="https://github.com/AmulPandey/WeatherWave/blob/main/app/src/main/assets/WeatherScreenshots.jpg">
 </p>
 
 ## Contact
