@@ -9,8 +9,10 @@
     android:orientation="vertical"
     android:fillViewport="true"
     tools:context=".MainActivity">
+
+
    <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bkgmain"
     tools:context=".MainActivity">
@@ -18,16 +20,25 @@
 
        <SearchView
            android:id="@+id/searchView"
-           style="@style/CustomSearchViewStyle"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:searchIcon="@drawable/baseline_location_on_24"
            app:layout_constraintBottom_toBottomOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.498"
+           app:layout_constraintHorizontal_bias="0.486"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toTopOf="parent"
-           app:layout_constraintVertical_bias="0.064" />
+           app:layout_constraintVertical_bias="0.038" />
+
+       <ImageView
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:layout_marginStart="30dp"
+           android:layout_marginTop="92dp"
+           android:src="@drawable/baseline_location_on_24"
+           app:layout_constraintEnd_toStartOf="@+id/city"
+           app:layout_constraintHorizontal_bias="0.956"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
 
        <TextView
            android:id="@+id/city"
@@ -40,31 +51,30 @@
            android:textStyle="bold"
            app:layout_constraintBottom_toBottomOf="@+id/lottieAnimationView"
            app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.501"
+           app:layout_constraintHorizontal_bias="0.492"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toTopOf="parent"
-           app:layout_constraintVertical_bias="0.309" />
+           app:layout_constraintVertical_bias="0.305" />
 
        <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAnimationView"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_marginBottom="152dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/def"
-        tools:ignore="MissingConstraints">
+           android:id="@+id/lottieAnimationView"
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.0"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.163"
+           app:lottie_autoPlay="true"
+           app:lottie_loop="true"
+           app:lottie_rawRes="@raw/def"
+           tools:ignore="MissingConstraints">
 
-    </com.airbnb.lottie.LottieAnimationView>
+       </com.airbnb.lottie.LottieAnimationView>
 
-    <TextView
-        android:id="@+id/avgtemp"
+       <TextView
+        android:id="@+id/currentTemp"
         android:layout_width="306dp"
         android:layout_height="111dp"
         android:fontFamily="@font/berkshireswash"
@@ -78,188 +88,206 @@
         app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/weather"
-        android:layout_width="177dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/backgroungshape"
-        android:gravity="center"
-        android:text="weather"
-        android:textColor="@color/white"
-        android:textSize="25sp"
+       <TextView
+           android:id="@+id/weather"
+           android:layout_width="wrap_content"
+           android:layout_height="65dp"
+           android:minWidth="160dp"
+           android:layout_marginTop="10dp"
+           android:background="@drawable/backgroungshape"
+           android:gravity="center"
+           android:text="weather"
+           android:textColor="@color/white"
+           android:textSize="25sp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.1"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/currentTemp"
+           app:layout_constraintVertical_bias="0.055" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/avgtemp"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avgtemp"
-        app:layout_constraintVertical_bias="0.055" />
 
-    <TextView
-        android:id="@+id/min"
-        android:layout_width="76dp"
-        android:layout_height="75dp"
-        android:background="@drawable/backgroungshape"
-        android:gravity="center"
-        android:text="00°"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+       <TextView
+           android:id="@+id/min"
+           android:layout_width="76dp"
+           android:layout_height="65dp"
+           android:layout_marginBottom="10dp"
+           android:background="@drawable/backgroungshape"
+           android:gravity="center"
+           android:text="00°"
+           android:textColor="@color/white"
+           android:textSize="20sp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.635"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/currentTemp"
+           app:layout_constraintVertical_bias="0.074" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avgtemp"
-        app:layout_constraintVertical_bias="0.069" />
+       <TextView
+           android:id="@+id/max"
+           android:layout_width="76dp"
+           android:layout_height="65dp"
+           android:layout_marginBottom="10dp"
+           android:background="@drawable/backgroungshape"
+           android:gravity="center"
+           android:text="00°"
+           android:textColor="@color/white"
+           android:textSize="20dp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="0.9"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/currentTemp"
+           app:layout_constraintVertical_bias="0.074" />
 
-    <TextView
-        android:id="@+id/max"
-        android:layout_width="76dp"
-        android:layout_height="75dp"
-        android:background="@drawable/backgroungshape"
-        android:gravity="center"
-        android:text="00°"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/avgtemp"
-        app:layout_constraintVertical_bias="0.069" />
-
-       <FrameLayout
-           android:id="@+id/frame"
-           android:layout_width="350dp"
-           android:layout_height="120dp"
-           android:layout_marginTop="570dp"
-           android:orientation="horizontal"
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="32dp"
+           android:gravity="center"
+           android:orientation="vertical"
+           android:padding="16dp"
            app:layout_constraintBottom_toBottomOf="parent"
            app:layout_constraintLeft_toLeftOf="parent"
            app:layout_constraintRight_toRightOf="parent"
-           app:layout_constraintTop_toTopOf="parent">
+           app:layout_constraintTop_toBottomOf="@+id/weather">
 
-           <LinearLayout
-               android:layout_width="344dp"
-               android:layout_height="match_parent"
-               android:background="@drawable/backgroungshape"
-               android:gravity="center_horizontal"
-               android:orientation="horizontal"
-               android:padding="10dp">
+           <FrameLayout
+               android:id="@+id/frame"
+               android:layout_width="350dp"
+               android:layout_height="120dp"
+               android:orientation="horizontal">
 
                <LinearLayout
+                   android:layout_width="344dp"
+                   android:layout_height="match_parent"
+                   android:background="@drawable/backgroungshape"
+                   android:gravity="center_horizontal"
+                   android:orientation="horizontal"
+                   android:padding="10dp">
 
-                   android:layout_width="100dp"
-                   android:layout_height="wrap_content"
-                   android:layout_gravity="center_horizontal"
-                   android:orientation="vertical">
+                   <LinearLayout
 
-                   <ImageView
-                       android:id="@+id/wind"
-                       android:layout_width="45dp"
-                       android:layout_height="45sp"
+                       android:layout_width="100dp"
+                       android:layout_height="wrap_content"
                        android:layout_gravity="center_horizontal"
-                       android:src="@drawable/wind" />
+                       android:orientation="vertical">
 
-                   <TextView
-                       android:id="@+id/wind1"
-                       android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:gravity="center"
-                       android:text="00 m/s"
-                       android:textColor="@color/white"
-                       android:textStyle="bold" />
+                       <ImageView
+                           android:id="@+id/wind"
+                           android:layout_width="45dp"
+                           android:layout_height="45sp"
+                           android:layout_gravity="center_horizontal"
+                           android:src="@drawable/wind" />
 
-                   <TextView
-                       android:id="@+id/wind2"
-                       android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:gravity="center"
-                       android:text="wind"
-                       android:textColor="@color/white"
-                       android:textStyle="bold"
+                       <TextView
+                           android:id="@+id/wind1"
+                           android:layout_width="match_parent"
+                           android:layout_height="25dp"
+                           android:gravity="center"
+                           android:text="00 m/s"
+                           android:textColor="@color/white"
+                           android:textStyle="bold" />
 
-                       />
+                       <TextView
+                           android:id="@+id/wind2"
+                           android:layout_width="match_parent"
+                           android:layout_height="25dp"
+                           android:gravity="center"
+                           android:text="wind"
+                           android:textColor="@color/white"
+                           android:textStyle="bold"
+
+                           />
+
+                   </LinearLayout>
+
+                   <LinearLayout
+
+                       android:layout_width="100dp"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:id="@+id/cloud"
+                           android:layout_width="45dp"
+                           android:layout_height="45dp"
+                           android:layout_gravity="center_horizontal"
+                           android:src="@drawable/clouds" />
+
+                       <TextView
+                           android:id="@+id/cloud1"
+                           android:layout_width="match_parent"
+                           android:layout_height="25dp"
+                           android:gravity="center"
+                           android:text="00"
+                           android:textColor="@color/white"
+                           android:textStyle="bold"
+
+                           />
+
+                       <TextView
+                           android:id="@+id/cloud2"
+                           android:layout_width="match_parent"
+                           android:layout_height="25dp"
+                           android:gravity="center"
+                           android:text="clouds"
+                           android:textColor="@color/white"
+                           android:textStyle="bold"
+
+                           />
+
+                   </LinearLayout>
+
+                   <LinearLayout
+
+                       android:layout_width="100dp"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical">
+
+                       <ImageView
+                           android:id="@+id/humidity"
+                           android:layout_width="45dp"
+                           android:layout_height="45dp"
+                           android:layout_gravity="center_horizontal"
+                           android:src="@drawable/humidity" />
+
+                       <TextView
+                           android:id="@+id/humidity1"
+                           android:layout_width="match_parent"
+                           android:layout_height="25dp"
+                           android:gravity="center"
+                           android:text="00 %"
+                           android:textColor="@color/white"
+                           android:textStyle="bold"
+
+                           />
+
+                       <TextView
+                           android:id="@+id/humidity2"
+                           android:layout_width="match_parent"
+                           android:layout_height="25dp"
+                           android:gravity="center"
+                           android:text="humidity"
+                           android:textColor="@color/white"
+                           android:textStyle="bold"
+
+                           />
+
+                   </LinearLayout>
 
                </LinearLayout>
+           </FrameLayout>
 
-               <LinearLayout
+           <com.github.mikephil.charting.charts.LineChart
+               android:id="@+id/lineChart"
+               android:layout_width="match_parent"
+               android:layout_marginTop="32dp"
+               android:layout_height="300dp"
+               />
 
-                   android:layout_width="100dp"
-                   android:layout_height="wrap_content"
-                   android:orientation="vertical">
-
-                   <ImageView
-                       android:id="@+id/cloud"
-                       android:layout_width="45dp"
-                       android:layout_height="45dp"
-                       android:layout_gravity="center_horizontal"
-                       android:src="@drawable/clouds" />
-
-                   <TextView
-                       android:id="@+id/cloud1"
-                       android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:gravity="center"
-                       android:text="00"
-                       android:textColor="@color/white"
-                       android:textStyle="bold"
-
-                       />
-
-                   <TextView
-                       android:id="@+id/cloud2"
-                       android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:gravity="center"
-                       android:text="clouds"
-                       android:textColor="@color/white"
-                       android:textStyle="bold"
-
-                       />
-
-               </LinearLayout>
-
-               <LinearLayout
-
-                   android:layout_width="100dp"
-                   android:layout_height="wrap_content"
-                   android:orientation="vertical">
-
-                   <ImageView
-                       android:id="@+id/humidity"
-                       android:layout_width="45dp"
-                       android:layout_height="45dp"
-                       android:layout_gravity="center_horizontal"
-                       android:src="@drawable/humidity" />
-
-                   <TextView
-                       android:id="@+id/humidity1"
-                       android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:gravity="center"
-                       android:text="00 %"
-                       android:textColor="@color/white"
-                       android:textStyle="bold"
-
-                       />
-
-                   <TextView
-                       android:id="@+id/humidity2"
-                       android:layout_width="match_parent"
-                       android:layout_height="25dp"
-                       android:gravity="center"
-                       android:text="humidity"
-                       android:textColor="@color/white"
-                       android:textStyle="bold"
-
-                       />
-
-               </LinearLayout>
-
-           </LinearLayout>
-       </FrameLayout>
+       </LinearLayout>
 
    </androidx.constraintlayout.widget.ConstraintLayout>
 

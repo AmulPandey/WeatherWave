@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
            val ihome = Intent(this@SplashActivity, MainActivity::class.java);
             startActivity(ihome)
             finish()
-        }, 3150)
+        }, 2000)
 
 
     }

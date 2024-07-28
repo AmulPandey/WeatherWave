@@ -1,10 +1,10 @@
-package com.example.weather
+package com.example.weather.DataClasses
 
 data class weatherApp(
     val base: String,
     val clouds: Clouds,
     val cod: Int,
-    val coord: Coord,
+    val coord: Coordinates,
     val dt: Int,
     val id: Int,
     val main: Main,

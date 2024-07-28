@@ -10,8 +10,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://jitpack.io")
+        jcenter()
     }
 }
+
+
 
 rootProject.name = "Weather"
 include(":app")
