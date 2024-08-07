@@ -216,16 +216,22 @@ class MainActivity : AppCompatActivity() {
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.granularity = 1f
         xAxis.labelRotationAngle = -45f // Rotate labels for better readability
+        xAxis.setDrawGridLines(true) // Draw grid lines
 
         val leftAxis: YAxis = lineChart.axisLeft
         leftAxis.textColor = Color.WHITE
+        leftAxis.setDrawGridLines(false) // Remove grid lines
 
         val rightAxis: YAxis = lineChart.axisRight
         rightAxis.textColor = Color.WHITE
+        rightAxis.setDrawGridLines(false) // Remove grid lines
 
         // Set the text color for the legend
         val legend: Legend = lineChart.legend
         legend.textColor = Color.WHITE
+
+        // Clear previous limit lines to avoid duplicate average temperature lines
+        leftAxis.removeAllLimitLines()
 
         // Create a LimitLine for the average value
         val avgLine = LimitLine(avgTemp.toFloat(), "Avg: %.0f".format(avgTemp))
@@ -236,9 +242,12 @@ class MainActivity : AppCompatActivity() {
 
         leftAxis.addLimitLine(avgLine)
 
+
         val lineData = LineData(dataSet)
         binding.lineChart.data = lineData
         binding.lineChart.invalidate() // Refresh chart
     }
+
+
 
 }
