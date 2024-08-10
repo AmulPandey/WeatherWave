@@ -18,14 +18,14 @@ A user-friendly Android application designed to provide real-time weather inform
 * Chart Dependency: MPAndroidChart
 * Location Services: Geocoder
 * API: Open Weather Api Key
-  
-## **Preview**  
-https://github.com/user-attachments/assets/4e95f06c-afdd-4079-82c6-4d129dfb93be
 
 ## **Screenshots**
 <p align="center">
 <img alt="Overview"  src="https://github.com/AmulPandey/WeatherWave/blob/main/app/src/main/assets/WeatherScreenshots.jpg">
 </p>
+
+## **Preview**  
+https://github.com/user-attachments/assets/4e95f06c-afdd-4079-82c6-4d129dfb93be
 
 ## Contact
 
